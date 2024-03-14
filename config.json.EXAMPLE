@@ -1,0 +1,52 @@
+{
+(Mivel json, a végén a megjegyzéseket törölni kell)
+Git userek |-vel elválasztva (userenként VAGY csak név(ek) VAGY csak email(ek)), a "szép" névben (kulcs) ne legyenek spec karakterek:
+    "users": {
+        "Elek": "elekgit|gitelek",
+        "Roland": "roli@gmail.com|roli77@freemail.hu"
+	},
+	
+Git projektek és a hozzájuk tartozó vizsgálandó branch:
+    "projects": {
+        "hello_world": "develop",
+        "proj_name": "master"
+	}
+     
+Az egyes projekteknél mely usereket vizsgáljuk (nem git user, hanem a fent megadott nevek):
+	"projectUsers": {
+        "hello_world": ["Elek", "Roland"]
+        "proj_name": ["Roland"]
+    },
+	
+Legyen-e git pull:
+	"gitPull": false,
+	
+
+
+dátumra vonatkozó string szűkítés (yyyy-mm-dd), üres is lehet, és akkor, nincs ilyen megszorítás:
+    "dateSearch": "2023-",
+
+	
+git project-ek docroot-jai:
+    "projectDocRoots": {
+        "hello_world": "/c/Users/admin/documents/hello_world/",
+        "proj_name": "/c/Users/admin/PhpstormProjects/devilbox/data/www/proj_name/htdocs"
+    },
+	
+ha kell szűkíteni, akkor mely mappá(k)ra szűkítse a keresést a project-en belül (git root-tól számított path), |-val elválasztva:
+    "subDirs": {
+        "proj_name": "app_modules/|vendor/",
+        "hello_world": "app_modules/|resources/views"
+    },
+	
+milyen git commitokat és file lokációkat (lokáció részlet is lehet) ignoráljon (|-vel elválasztva):
+    "ignorableFileLocOrCommits": {
+        "hello_world": "ExampleModule/|app/Models/ValamiHozottFájl.php|/vendor/|generated/",
+        "proj_name": "ExampleModule/|e33bc8977f3af945555ae70e963d5d53a838b63f"
+    },
+	
+milyen kiterjesztésű fájlokat vizsgáljon csak, ha üres a tömb, akkor mindent
+	"fileExtensions": [
+		"php", "js", "scss"
+	]
+}
