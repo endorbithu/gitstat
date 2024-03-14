@@ -1,0 +1,2 @@
+# gitstat
+Git staisztika
