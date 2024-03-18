@@ -1,4 +1,5 @@
 # Git statisztika userekre vonatkozóan
+Meghatározott időintervallumban (utoljára) módosított sorok összeszámolása userenként.
 
 ## Előfeltételek
 - php szerver
